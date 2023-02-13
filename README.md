@@ -111,9 +111,9 @@ Pane[] tabs = {new Home(), new Users(), new Builder(), new Options(), /*new Your
 
 ## 🔨 Building and Running
 
-The recommended IDE for building and running this project is [IntelliJ Idea](https://www.jetbrains.com/idea/) with [JDK 8](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html).
+The recommended IDE for this project is [IntelliJ Idea](https://www.jetbrains.com/idea/) with [JDK 8](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html).
 
-This project uses Maven, so building it from source is very easy. Once you have everything set up, follow these simple steps:
+This project uses Maven, so building and running it from source is very easy. Once you have everything set up, follow these simple steps:
 - Build binary: `mvn clean package`
 - Run binary: `mvn exec:java`
 
