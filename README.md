@@ -2,7 +2,7 @@
 
 This JavaFX Dashboard is a flexible and versatile template, designed to be used as a starting point for your own custom dashboard projects. It features a theme changer with both dark and light modes, a customizable table builder, and a user-friendly interface.
 
-**[Features](#-features) • [Themes](#-themes) • [Theme Changer](#-theme-changer) • [Table Builder](#-table-builder) • [Adding Tabs](#-adding-tabs) • [License](#-license)**
+**[Features](#-features) • [Themes](#-themes) • [Theme Changer](#-theme-changer) • [Table Builder](#-table-builder) • [Adding Tabs](#-adding-tabs) • [Building and Running](#-building-and-running) • [License](#-license)**
 
 ![thumbnail](.github/thumbnail.png)
 
@@ -11,7 +11,7 @@ This JavaFX Dashboard is a flexible and versatile template, designed to be used 
 - Custom title bar
 - Rounded movable window
 - Resizeable
-- [Theme Changer](#-theme-changer) (with local storage)
+- Dark/Light [Theme Changer](#-theme-changer) (with local storage)
 - [Table Builder](#-table-builder)
 
 ## 🎨 Themes
@@ -43,23 +43,13 @@ Then create the corresponding CSS files:
 in the [theme](src/main/resources/com/jannikbuscha/dashboard/css/theme) directory:
 
 ```
-📦javafx-dashboard
- ┗ 📂src
- ┃ ┗ 📂main
- ┃ ┃ ┣ 📂java
- ┃ ┃ ┗ 📂resources
- ┃ ┃ ┃ ┗ 📂com
- ┃ ┃ ┃ ┃ ┗ 📂jannikbuscha
- ┃ ┃ ┃ ┃ ┃ ┗ 📂dashboard
- ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂css
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂theme
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂backify
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂standard
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂your_new_theme
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜dark.css
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜light.css
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜theme.css
- ┗ ...
+ 📦theme
+ ┣ 📂backify
+ ┣ 📂standard
+ ┗ 📂your_new_theme
+ ┃ ┣ 📜dark.css
+ ┃ ┣ 📜light.css
+ ┃ ┗ 📜theme.css
 ```
 
 How to structure the content of these files can be found in the [standard theme](src/main/resources/com/jannikbuscha/dashboard/css/theme/standard).
@@ -118,6 +108,14 @@ Finally, create an object in the `initialize()` method of the [Dashboard Control
 ```java
 Pane[] tabs = {new Home(), new Users(), new Builder(), new Options(), /*new YourNewTab()*/};
 ```
+
+## 🔨 Building and Running
+
+The recommended IDE for building and running this project is [IntelliJ Idea](https://www.jetbrains.com/idea/) with [JDK 8](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html).
+
+This project uses Maven, so building it from source is very easy. Once you have everything set up, follow these simple steps:
+- Build binary: `mvn clean package`
+- Run binary: `mvn exec:java`
 
 ## 📝 License
 

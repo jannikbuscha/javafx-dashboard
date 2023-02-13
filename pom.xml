@@ -15,6 +15,22 @@
                 <configuration>
                     <source>8</source>
                     <target>8</target>
+                    <compilerArguments>
+                        <bootclasspath>${sun.boot.class.path}${path.separator}${java.home}/lib/jfxrt.jar</bootclasspath>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.jannikbuscha.dashboard.Main</mainClass>
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
         </plugins>
@@ -28,14 +44,6 @@
             <version>1.18.12</version>
             <scope>provided</scope>
         </dependency>
-
-        <!-- cssfx -->
-        <dependency>
-            <groupId>org.fxmisc.cssfx</groupId>
-            <artifactId>cssfx</artifactId>
-            <version>1.1.1</version>
-        </dependency>
-
     </dependencies>
 
 </project>

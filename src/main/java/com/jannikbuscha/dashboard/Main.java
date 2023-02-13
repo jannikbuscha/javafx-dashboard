@@ -3,6 +3,7 @@ package com.jannikbuscha.dashboard;
 import com.jannikbuscha.dashboard.user.LocalUserData;
 import com.jannikbuscha.dashboard.util.FXUtil;
 import com.jannikbuscha.dashboard.util.Theme;
+import com.sun.javafx.util.Logging;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,7 +12,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import lombok.*;
-import org.fxmisc.cssfx.CSSFX;
+import sun.util.logging.PlatformLogger;
 
 import java.io.IOException;
 
@@ -30,13 +31,7 @@ public class Main extends Application {
 
     public void start(Stage stage) throws Exception {
         instance = this;
-
-        startCSSFX();
         createScene(stage);
-    }
-
-    private void startCSSFX() {
-        CSSFX.start();
     }
 
     private void createScene(Stage stage) throws IOException {
@@ -63,7 +58,7 @@ public class Main extends Application {
 
     private void loadTheme() {
         // Ignore CSS warnings
-        com.sun.javafx.util.Logging.getCSSLogger().setLevel(sun.util.logging.PlatformLogger.Level.OFF);
+        Logging.getCSSLogger().setLevel(PlatformLogger.Level.OFF);
 
         if (!LocalUserData.existsFolder()) {
             LocalUserData.setProperty("theme", Theme.STANDARD.ordinal() + "");
